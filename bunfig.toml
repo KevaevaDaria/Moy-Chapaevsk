@@ -1,0 +1,10 @@
+[build]
+target = "browser"
+outdir = "./dist"
+minify = { syntax = true, whitespace = true }
+
+[dev]
+hot = true
+
+[test]
+preload = ["./test-setup.ts"]

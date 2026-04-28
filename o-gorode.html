@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Чапаевск - О городе</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Кнопка "Наверх" -->
+<button id="backToTop" class="back-to-top" title="Наверх">↑</button>
+<!-- Модальное окно для мобилок -->
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <img id="modalImage" src="" alt="">
+        <span id="modalTag" class="modal-tag"></span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+    </div>
+</div>
+    <header class="header">
+        <div class="container header-flex">
+            <div class="logo-group">
+                <div class="city-emblem">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/%D0%93%D0%B5%D1%80%D0%B1_%D0%A7%D0%B0%D0%BF%D0%B0%D0%B5%D0%B2%D1%81%D0%BA%D0%B0_%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C.png" alt="Герб Чапаевска">
+                </div> 
+                <div class="logo">Мой<span>Чапаевск</span></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск по городу...">
+                <button id="search-btn" class="search-btn">Найти</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-nav-panel">
+        <div class="container">
+            <nav class="sub-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li class="active"><a href="o-gorode.html">О городе</a></li>
+                    <li><a href="glava.html">Глава</a></li>
+                    <li><a href="press.html">Пресс-служба</a></li>
+                    <li><a href="admin.html">Администрация</a></li>
+                    <li><a href="document.html">Документы</a></li>
+                    <li><a href="budjet.html">Бюджет для граждан</a></li>
+                    <li><a href="proekt.html">Национальные проекты</a></li>
+                    <li><a href="obshestvenost.html">Общественность</a></li>
+                    <li><a href="programm.html">Муниципальные программы</a></li>
+                    <li><a href="investoram.html">Инвесторам</a></li>
+                    <li><a href="fgramotnost.html">Финансовая грамотность</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-layout">
+        <main class="main-content">
+            <!-- Фото города и заголовок -->
+            <div class="hero-city">
+                <img src="главная.jpg" alt="Чапаевск" loading="lazy">
+                <div class="hero-overlay">
+                    <div class="hero-title">Чапаевск</div>
+                    <div class="hero-subtitle">Город с сильным характером</div>
+                </div>
+            </div>
+
+            <!-- Информация о городе -->
+            <div class="info-block">
+                <div id="about-city" class="info-block">
+    <h2>О городе</h2>
+                
+                <p>История города Чапаевск началась в 1909 году со строительства Самарского Сергиевского порохового завода. Покровителем завода был Великий Князь Сергей Михайлович Романов, внук императора Николая I, поэтому завод получил имя Сергиевского.</p>
+                <p>Про город Чапаевск говорят – «трижды названный»: с 1911 года — посёлок Иващенково, с 23 августа 1927 года — город Троцк, с 7 февраля 1929 года в год 10-й годовщины гибели В.И.Чапаева было переименование города в Чапаевск.</p>
+            </div>
+<!-- Навигация по разделам страницы -->
+<div class="page-nav">
+    <div class="container">
+        <a href="#about-city" class="page-nav-link">О городе</a>
+        <a href="#places" class="page-nav-link">Интересные места</a>
+        <a href="#rest" class="page-nav-link">Места отдыха</a>
+        <a href="#people" class="page-nav-link">Люди</a>
+    </div>
+</div>
+            <!-- Достопримечательности -->
+            <h2 id="places" class="section-title">Интересные места</h2>
+            <div class="places-grid">
+                <div class="place-card">
+                    <img src="2.webp" alt="Бюст Иващенко" >
+                    <div class="place-card-content">
+                        <h3>Бюст основателя города В. П. Иващенко</h3>
+                        <p>Бюст основателя города В. П. Иващенко был открыт в июле 2011 года в честь 100-летнего юбилея города.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="5.jpg" alt="Храм Сергия Радонежского" >
+                    <div class="place-card-content">
+                        <h3>Церковь преподобного Сергия Радонежского</h3>
+                        <p>Храм Сергия Радонежского – визитная карточка Чапаевска, памятник архитектуры федерального значения.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="3.jpg" alt="Памятник Чапаеву" >
+                    <div class="place-card-content">
+                        <h3>Памятник Василию Ивановичу Чапаеву</h3>
+                        <p>Памятник В. И. Чапаеву установлен на территории городского парка культуры и отдыха имени Чапаева.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="8.jpg" alt="Краеведческий музей" >
+                    <div class="place-card-content">
+                        <h3>Муниципальный краеведческий музей</h3>
+                        <p>Краеведческий музей основан в 1968 году. Фонды музея насчитывают свыше четырёх тысяч единиц хранения.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="1.jpg" alt="ДК Чапаева" >
+                    <div class="place-card-content">
+                        <h3>Дворец культуры имени В.И. Чапаева</h3>
+                        <p>Дворец культуры в стиле конструктивизм построен в 1929 году.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="7.jpg" alt="Дом жилой" >
+                    <div class="place-card-content">
+                        <h3>«Дом жилой» (улица Пионерская, 11)</h3>
+                        <p>Дом специалистов, построенный в 1938 году. Считается одним из интереснейших в городе.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="6.jpg" alt="Заводоуправление">
+                    <div class="place-card-content">
+                        <h3>Заводоуправление АО «Промсинтез»</h3>
+                        <p>Здание было готово к эксплуатации в начале 1912 года.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <img src="4.jpg" alt="Дом с мезонином">
+                    <div class="place-card-content">
+                        <h3>«Дом жилой с мезонином» (улица Ленина, 30)</h3>
+                        <p>Два отдельно стоящих трёхэтажных дома, построенных в 1929 году.</p>
+                        <a href="#" class="place-card-link">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+<!-- Места отдыха -->
+<h2 id="rest" class="section-title">Места отдыха</h2>
+<p style="text-align: center; margin-bottom: 30px; color: #161d45;">Актуальная информация о местах отдыха и досуга в Чапаевске. Подробное описание, часы работы, услуги и контакты.</p>
+
+<div class="places-grid">
+    <div class="place-card">
+        <img src="park.jpg" alt="Парк им. В.И. Чапаева" >
+        <div class="place-card-content">
+            <h3>Парк имени В.И. Чапаева</h3>
+            <p>Обновленный парк имени В.И. Чапаева – это не просто зеленая зона, а настоящая «Территория Успеха», где переплетаются история и современность. Монументальный памятник Чапаеву, словно страж времени, возвышается над парком.</p>
+            <a href="#" class="place-card-link">Подробнее →</a>
+        </div>
+    </div>
+
+    <div class="place-card">
+        <img src="bib.jpg" alt="Библиотека Библиоград" >
+        <div class="place-card-content">
+            <h3>Модельная библиотека «Библиоград»</h3>
+            <p>Современная модельная библиотека «Библиоград» – это уже не просто книгохранилище, а настоящая творческая лаборатория, место для встреч, общения и интересных дискуссий. «Библиоград» – место, которое давно переросло рамки обычной библиотеки.</p>
+            <a href="#" class="place-card-link">Подробнее →</a>
+        </div>
+    </div>
+
+    <div class="place-card">
+        <img src="gork.jpg" alt="Кинозал в ДК Горького">
+        <div class="place-card-content">
+            <h3>Современный кинозал в ДК им. А.М. Горького</h3>
+            <p>В декабре 2017 года в рамках федеральной программы поддержки отечественного кинематографа в Чапаевске открылся современный кинозал во Дворце культуры им. А.М. Горького. Кинозал, рассчитанный на 276 зрителей, оснащен передовым кино-технологическим оборудованием.</p>
+            <a href="#" class="place-card-link">Подробнее →</a>
+        </div>
+    </div>
+
+    <div class="place-card">
+        <img src="luch.jpg" alt="Спорткомплекс Луч">
+        <div class="place-card-content">
+            <h3>Спортивный комплекс «Луч»</h3>
+            <p>Спортивный комплекс «Луч» приглашает в бассейн! Развитие спортивной инфраструктуры – приоритетная задача для города Чапаевска. Вместе с ледовой ареной «Старт», футбольным полем на стадионе «Луч» и универсальными спортивными площадками, жителям города доступны разные виды активности.</p>
+            <a href="#" class="place-card-link">Подробнее →</a>
+        </div>
+    </div>
+
+    <div class="place-card">
+        <img src="start.jpg" alt="Ледовая арена Старт">
+        <div class="place-card-content">
+            <h3>Ледовая арена «Старт»</h3>
+            <p>Спортивный комплекс «Старт» — центр спортивной жизни Чапаевска. Арена открыта ежедневно с 9:00 до 21:00 по адресу: г. Чапаевск, ул. Железнодорожная, 14 А. Спорткомплекс «Старт» уже несколько лет является излюбленным местом для активного отдыха горожан.</p>
+            <a href="#" class="place-card-link">Подробнее →</a>
+        </div>
+    </div>
+</div>
+            <!-- Люди -->
+<h2 id="people" class="section-title">Люди</h2>
+<div class="people-grid">
+    <div class="person-card">
+        <img src="a.jpg" alt="" >
+        <div class="person-tag">Космос</div>
+        <h3>Сергей Васильевич Авдеев: чапаевский покоритель космоса</h3>
+        <p>Сергей Васильевич Авдеев родился в Чапаевске. Космонавт, Герой России, его имя вписано в Книгу рекордов Гиннеса. Провел в космосе 747 суток, участвуя в трех экспедициях на станцию «Мир», совершил десять выходов в открытый космос.</p>
+    </div>
+<div class="person-card">
+        
+        <img src="dan.jpg" alt="" >
+        <div class="person-tag">Творчество</div>
+        <h3>Данил Андреевич Шаварин: выдающийся актер, снимается в кино</h3>
+        <p>Данил Андреевич Шаварин – актер,родом из Чапаевска. Обучался в РГИСИ на курсе "Артиста Мюзикла".Снимался во многих работах известных режисеров. В их числе Тарантино, Тарковский, Кристофер Нолан. Лучший друг Тимоти Шаламе.</p>
+    </div>
+    <div class="person-card">
+        <img src="zh.jpg" alt="" >
+        <div class="person-tag">Архитектура</div>
+        <h3>Владимир Иванович Жуков: архитектор, формирующий облик Самарской области</h3>
+        <p>Владимир Иванович Жуков, уроженец Чапаевска, – заслуженный архитектор России, оставивший значительный след в архитектуре Самарской области. После окончания Куйбышевского инженерно-строительного института работал в «Куйбышевгорпроекте», затем главным архитектором Тольятти и Самары.</p>
+    </div>
+
+    <div class="person-card">
+       
+        <img src="pr.jpg" alt="" >
+         <div class="person-tag">Спорт</div>
+        <h3>Никита Прохоров и Николь Родомакина</h3>
+        <p>Чапаевский паралимпиец Никита Прохоров завоевал серебряную медаль в толкании ядра на Играх в Токио (2021), установив рекорд Европы (16,29 м). Чемпион Паралимпиады-2012 в Лондоне, многократный чемпион мира и Европы. Заслуженный мастер спорта.</p>
+    </div>
+
+    <div class="person-card">
+        
+        <img src="mor.jpg" alt="" >
+        <div class="person-tag">Театр</div>
+        <h3>Владимир Николаевич Морякин: чапаевский актер</h3>
+        <p>Владимир Николаевич Морякин — чапаевский актер на сцене Самарского академического театра драмы им. М. Горького. Родился в городе Чапаевске, учился в школе №1. Выпускник второго набора мастерской В.А. Гвоздкова.</p>
+    </div>
+
+    <div class="person-card">
+        
+        <img src="ger.jpg" alt="" >
+        <div class="person-tag">Творчество</div>
+        <h3>Михаил Максимович Гераськин: художник, воспевающий красоту Самарской земли</h3>
+        <p>Михаил Максимович Гераськин – самарский художник, живописец и пейзажист. С 12 лет посвятил себя искусству, окончил Пензенское художественное училище. Известен своими лиричными пейзажами Самарской области.</p>
+    </div>
+
+    <div class="person-card">
+        
+        <img src="kon.jpg" alt="" >
+        <div class="person-tag">Творчество</div>
+        <h3>Сергей Никитович Кондулуков: художник из Самарской области</h3>
+        <p>Сергей Никитович Кондулуков – заслуженный художник РФ, родом из Чапаевска, ныне живет и работает в Тольятти. Член Российской академии художеств и Союза художников. Автор известных картин, таких как «Студентки. Душевный разговор».</p>
+    </div>
+
+    <div class="person-card">
+       
+        <img src="che.jpg" alt="" >
+         <div class="person-tag">Литература</div>
+        <h3>Чапаевский поэт Евгений Чепурных: путь к признанию</h3>
+        <p>Евгений Петрович Чепурных – чапаевский поэт, лауреат премии им. И.Дмитриева. Дебютировал в 1978 году в журнале «Юность», получив признание известных литераторов. Окончил Литературный институт им. М. Горького.</p>
+    </div>
+
+    <div class="person-card">
+        
+        <img src="kizh.jpg" alt="Сергей Васильевич Авдеев" >
+        <div class="person-tag">Литература</div>
+        <h3>Татьяна Веньяминовна Кижайкина: хранительница литературных традиций Чапаевска</h3>
+        <p>Татьяна Веньяминовна Кижайкина – чапаевская поэтесса, активный деятель культуры и член Союза писателей России. Автор восьми поэтических сборников, наполненных любовью к родному краю и глубоким лиризмом. Более 10 лет руководила литклубом.</p>
+    </div>
+
+    <div class="person-card">
+        
+        <img src="bond.jpg" alt="Сергей Васильевич Авдеев" >
+        <div class="person-tag">Литература</div>
+        <h3>Владимир Никифорович Бондаренко: сказочник из Чапаевска</h3>
+        <p>Владимир Никифорович Бондаренко (1932-2001) – известный детский писатель, сказочник, прозаик и поэт, большую часть жизни проживший в Чапаевске. Вместе со старшим братом Вениамином создал 16 книг сказок, многие из которых экранизированы.</p>
+    </div>
+</div>
+ </main>
+        <aside class="sidebar">
+            <div class="sidebar-widget weather-card">
+                <span class="temp">+18°C</span>
+                <p>Солнечно</p>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Карта города</h3>
+                <div class="map-frame-small">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=49.721415%2C52.981881&z=12" width="100%" height="200" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Интересные факты</h3>
+                <ul class="sidebar-list">
+                    <li>Год основания: 1909</li>
+                    <li>Население: ~70 000 человек</li>
+                    <li>Трижды менял название</li>
+                    <li>Есть памятник архитектуры федерального значения</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Информация о сайте</h3>
+                    <p>Сетевое издание "Официальный сайт Администрации городского округа Чапаевск"</p>
+                    <p>Регистрационный номер серии ЭЛ № ФС77-73893 от 12.10.2018</p>
+                    <p>Учредитель: Администрация городского округа Чапаевск</p>
+                    <p>Главный редактор: Краснов Александр Сергеевич</p>
+                    <p>8(84639)2-24-04</p>
+                    <p>chapaevsk@bk.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Телефоны экстренных служб</h3>
+                    <ul>
+                        <li><strong>112</strong> - Единый телефон спасения</li>
+                        <li><strong>2-17-27</strong> - Пожарная охрана</li>
+                        <li><strong>2-28-55</strong> - Полиция</li>
+                        <li><strong>2-19-36</strong> - Скорая помощь</li>
+                        <li><strong>104</strong> - Газовая служба</li>
+                        <li><strong>2-34-33, 2-29-43</strong> - ЕДДС</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><a href="#">Официальный сайт Администрации</a></li>
+                        <li><a href="#">Политика обработки персональных данных</a></li>
+                        <li><a href="#">Постановление №9541 от 10.07.2017</a></li>
+                    </ul>
+                    <p style="margin-top: 15px;">
+                        <strong>Режим работы:</strong><br>
+                        Пн-Чт: 8:00-17:00<br>
+                        Пт: 8:00-16:00<br>
+                        ЕДДС: круглосуточно
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Официальный сайт Администрации городского округа Чапаевск</p>
+                <p>При открытии страниц сайта посетитель автоматически дает согласие на обработку персональных данных</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+    function openModal(item) {
+        const modal = document.getElementById('modalOverlay');
+        if (!modal) return;
+        
+        const imgEl = document.getElementById('modalImage');
+        const tagEl = document.getElementById('modalTag');
+        const titleEl = document.getElementById('modalTitle');
+        const textEl = document.getElementById('modalText');
+        
+        if (imgEl) imgEl.src = item.image || '';
+        if (tagEl) tagEl.textContent = item.tag || 'Информация';
+        if (titleEl) titleEl.textContent = item.title;
+        if (textEl) textEl.textContent = item.text;
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modalOverlay');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
+    
+    // Закрытие по клику на фон (без повторного объявления переменной)
+    document.getElementById('modalOverlay')?.addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    // Для карточек мест на мобилке
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.place-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('.place-card-link')) return;
+                
+                const img = this.querySelector('img')?.src;
+                const title = this.querySelector('h3')?.innerText;
+                const desc = this.querySelector('p')?.innerText;
+                
+                openModal({
+                    image: img,
+                    tag: 'Достопримечательность',
+                    title: title,
+                    text: desc
+                });
+            });
+        });
+        
+        // Для карточек людей на мобилке
+        document.querySelectorAll('.person-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const img = this.querySelector('img')?.src;
+                const tag = this.querySelector('.person-tag')?.innerText;
+                const title = this.querySelector('h3')?.innerText;
+                const desc = this.querySelector('p')?.innerText;
+                
+                openModal({
+                    image: img,
+                    tag: tag,
+                    title: title,
+                    text: desc
+                });
+            });
+        });
+    }
+</script>
+</body>
+</html>

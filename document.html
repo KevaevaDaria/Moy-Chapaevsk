@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документы - Мой Чапаевск</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .doc-card {
+            background: #a5a9be17;
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(249, 249, 255, 0.641);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(233, 233, 255, 0.837);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.2s ease;
+        }
+        .doc-card:hover {
+            transform: translateY(-2px);
+        }
+        .doc-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #161d45;
+        }
+        .doc-date {
+            font-size: 0.75rem;
+            color: #161d45;
+            margin-bottom: 8px;
+        }
+        .doc-link {
+            color: #161d45;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .filter-group {
+            background: #c3c8dd16;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(249, 249, 255, 0.641);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-end;
+        }
+        .filter-item {
+            flex: 1;
+            min-width: 150px;
+        }
+        .filter-item label {
+            display: block;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            color: rgba(0,0,0,0.6);
+        }
+        .filter-item input, .filter-item select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.2);
+            background: #a5a9be1f;
+            color: #161d45;
+        }
+        .search-btn-doc {
+            background: #161d45;
+            color: #ffffff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        hr {
+            border-color: rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        /* Стили для блока ссылок */
+        .links-block {
+            margin-top: 20px;
+        }
+        .doc-section {
+            margin-bottom: 30px;
+        }
+        .doc-section h3 {
+            color: #161d45;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .doc-link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(165, 169, 190, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+        .doc-link-item:hover {
+            background: rgba(165, 169, 190, 0.204);
+            transform: translateX(5px);
+        }
+        .doc-link-item span {
+            color: #161d45;
+            font-size: 0.85rem;
+            flex: 1;
+            cursor: pointer;
+        }
+        .open-file-btn {
+            background: #161d45;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+        .open-file-btn:hover {
+            background: #161d45;
+        }
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar-list li {
+            margin-bottom: 12px;
+        }
+        .sidebar-list a {
+            color: #161d45;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .sidebar-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<button id="backToTop" class="back-to-top" title="Наверх">↑</button>
+<body>
+    <header class="header">
+        <div class="container header-flex">
+            <div class="logo-group">
+                <div class="city-emblem">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/%D0%93%D0%B5%D1%80%D0%B1_%D0%A7%D0%B0%D0%BF%D0%B0%D0%B5%D0%B2%D1%81%D0%BA%D0%B0_%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C.png" alt="Герб Чапаевска">
+                </div> 
+                <div class="logo">Мой<span>Чапаевск</span></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск по городу...">
+                <button id="search-btn" class="search-btn">Найти</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-nav-panel">
+        <div class="container">
+            <nav class="sub-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="o-gorode.html">О городе</a></li>
+                    <li><a href="glava.html">Глава</a></li>
+                    <li><a href="press.html">Пресс-служба</a></li>
+                    <li><a href="admin.html">Администрация</a></li>
+                    <li class="active"><a href="document.html">Документы</a></li>
+                    <li><a href="budjet.html">Бюджет для граждан</a></li>
+                    <li><a href="proekt.html">Национальные проекты</a></li>
+                    <li><a href="obshestvenost.html">Общественность</a></li>
+                    <li><a href="programm.html">Муниципальные программы</a></li>
+                    <li><a href="investoram.html">Инвесторам</a></li>
+                    <li><a href="fgramotnost.html">Финансовая грамотность</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-layout">
+        <main class="main-content">
+            <!-- Поиск и фильтры -->
+            <div class="filter-group">
+                <h3>Реестр плановых и внеплановых проверок, их результатов выданных предписаний</h3>
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <label>Поиск</label>
+                        <input type="text" id="searchDocs" placeholder="Введите текст...">
+                    </div>
+                    <div class="filter-item">
+                        <label>Тип документа</label>
+                        <select id="docType">
+                            <option value="all">Все типы</option>
+                            <option value="Постановление">Постановление</option>
+                            <option value="Распоряжение">Распоряжение</option>
+                            <option value="Решение">Решение</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label>Дата</label>
+                        <input type="date" id="docDate">
+                    </div>
+                    <div class="filter-item">
+                        <label>&nbsp;</label>
+                        <button class="search-btn-doc" id="filterBtn">Найти</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Документы -->
+            <div id="documentsList">
+                <div class="doc-card" data-title="О проведении публичных слушаний" data-type="Решение" data-date="2026-04-10">
+                    <div class="doc-date">с 10.04.2026 по 11.05.2026</div>
+                    <div class="doc-title">О проведении публичных слушаний по вопросу внесения изменений в Правила благоустройства</div>
+                    <a href="#" class="doc-link">Подробнее →</a>
+                </div>
+                <div class="doc-card" data-title="О внесении изменений в Устав" data-type="Решение" data-date="2026-03-01">
+                    <div class="doc-date">с 01.03.2026 по 30.03.2026</div>
+                    <div class="doc-title">О внесении изменений в Устав городского округа Чапаевск</div>
+                    <a href="#" class="doc-link">Подробнее →</a>
+                </div>
+                <div class="doc-card" data-title="Постановление №245" data-type="Постановление" data-date="2026-02-15">
+                    <div class="doc-date">15.02.2026</div>
+                    <div class="doc-title">Постановление №245 "Об утверждении перечня муниципальных услуг"</div>
+                    <a href="#" class="doc-link">Подробнее →</a>
+                </div>
+                <div class="doc-card" data-title="Распоряжение №12" data-type="Распоряжение" data-date="2026-01-10">
+                    <div class="doc-date">10.01.2026</div>
+                    <div class="doc-title">Распоряжение №12 "О проведении проверок в сфере благоустройства"</div>
+                    <a href="#" class="doc-link">Подробнее →</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Блок ссылок на документы -->
+            <div class="links-block">
+                <div class="doc-section">
+                    <h3>Реестр и перечень услуг</h3>
+                    <div class="doc-link-item" data-file="files/reestr.pdf">
+                        <span>Реестр муниципальных услуг Администрации городского округа Чапаевск</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/perechen.pdf">
+                        <span>Перечень муниципальных услуг Администрации городского округа Чапаевск</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/reglamenty.pdf">
+                        <span>Регламенты муниципальных услуг</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/proekty.pdf">
+                        <span>Проекты регламентов муниципальных услуг, размещенные на независимую экспертизу</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/vyyavlenie.pdf">
+                        <span>Выявление правообладателей ранее учтенных объектов недвижимости</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/minimalnye-ceny.pdf">
+                        <span>Информация о минимальных ценах на социально значимые продовольственные товары</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                </div>
+
+                <div class="doc-section">
+                    <h3>Предписания об устранении нарушений</h3>
+                    <div class="doc-link-item" data-file="files/predpisanie-adm.pdf">
+                        <span>Предписание об устранении нарушений в Администрации г.о. Чапаевск за 2025-2026 гг.</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/predpisanie-dshi.pdf">
+                        <span>Предписание об устранении нарушений в ДШИ №2 «Гармония» за 2024-2026 гг.</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/predpisanie-mfts.pdf">
+                        <span>Предписание об устранении нарушений в МФЦ за 2024-2025 гг.</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/predpisanie-kumi.pdf">
+                        <span>Предписание об устранении нарушений в КУМИ за 2025 год</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/predpisanie-depstroy.pdf">
+                        <span>Предписание об устранении нарушений в Департаменте строительства за 2024-2025 гг.</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                </div>
+
+                <div class="doc-section">
+                    <h3>Распоряжения</h3>
+                    <div class="doc-link-item" data-file="files/rasporyazhenie-863.pdf">
+                        <span>Распоряжение от 20.11.2025 №Д-7/863 "Об утверждении Плана проведения мероприятий ведомственного контроля"</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                    <div class="doc-link-item" data-file="files/rasporyazhenie-861.pdf">
+                        <span>Распоряжение от 19.11.2025 №Д-7/861 "Об утверждении Плана проведения плановых проверок в сфере закупок"</span>
+                        <button class="open-file-btn">Открыть</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-widget weather-card">
+                <span class="temp">+18°C</span>
+                <p>Солнечно</p>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Карта города</h3>
+                <div class="map-frame-small">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=49.721415%2C52.981881&z=12" width="100%" height="200" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Разделы документов</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">Постановления Администрации</a></li>
+                    <li><a href="#">Распоряжения Главы</a></li>
+                    <li><a href="#">Решения Думы</a></li>
+                    <li><a href="#">Муниципальные программы</a></li>
+                    <li><a href="#">Административные регламенты</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Информация о сайте</h3>
+                    <p>Сетевое издание "Официальный сайт Администрации городского округа Чапаевск"</p>
+                    <p>Регистрационный номер серии ЭЛ № ФС77-73893 от 12.10.2018</p>
+                    <p>Учредитель: Администрация городского округа Чапаевск</p>
+                    <p>Главный редактор: Краснов Александр Сергеевич</p>
+                    <p>8(84639)2-24-04</p>
+                    <p>chapaevsk@bk.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Телефоны экстренных служб</h3>
+                    <ul>
+                        <li><strong>112</strong> - Единый телефон спасения</li>
+                        <li><strong>2-17-27</strong> - Пожарная охрана</li>
+                        <li><strong>2-28-55</strong> - Полиция</li>
+                        <li><strong>2-19-36</strong> - Скорая помощь</li>
+                        <li><strong>104</strong> - Газовая служба</li>
+                        <li><strong>2-34-33, 2-29-43</strong> - ЕДДС</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><a href="#">Официальный сайт Администрации</a></li>
+                        <li><a href="#">Политика обработки персональных данных</a></li>
+                        <li><a href="#">Постановление №9541 от 10.07.2017</a></li>
+                    </ul>
+                    <p style="margin-top: 15px;">
+                        <strong>Режим работы:</strong><br>
+                        Пн-Чт: 8:00-17:00<br>
+                        Пт: 8:00-16:00<br>
+                        ЕДДС: круглосуточно
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Официальный сайт Администрации городского округа Чапаевск</p>
+                <p>При открытии страниц сайта посетитель автоматически дает согласие на обработку персональных данных</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Функция открытия файлов
+        function openFile(filePath) {
+    // Временная заглушка, пока нет файлов
+    alert('Файл "' + filePath + '" будет добавлен позже.\n\nСейчас файлы загружаются в папку files/');
+        }
+        
+        // Добавляем обработчики на все кнопки
+        document.querySelectorAll('.doc-link-item').forEach(item => {
+            const filePath = item.getAttribute('data-file');
+            const span = item.querySelector('span');
+            const btn = item.querySelector('.open-file-btn');
+            
+            if (span) span.onclick = () => openFile(filePath);
+            if (btn) btn.onclick = () => openFile(filePath);
+        });
+        
+        // Фильтрация документов
+        document.getElementById('filterBtn').addEventListener('click', function() {
+            const searchText = document.getElementById('searchDocs').value.toLowerCase();
+            const docType = document.getElementById('docType').value;
+            const docDate = document.getElementById('docDate').value;
+            
+            const docs = document.querySelectorAll('#documentsList .doc-card');
+            let hasVisible = false;
+            
+            docs.forEach(doc => {
+                const title = doc.getAttribute('data-title').toLowerCase();
+                const type = doc.getAttribute('data-type');
+                const date = doc.getAttribute('data-date');
+                
+                let matchSearch = searchText === '' || title.includes(searchText);
+                let matchType = docType === 'all' || type === docType;
+                let matchDate = docDate === '' || date === docDate;
+                
+                if (matchSearch && matchType && matchDate) {
+                    doc.style.display = 'block';
+                    hasVisible = true;
+                } else {
+                    doc.style.display = 'none';
+                }
+            });
+            
+            if (!hasVisible) {
+                alert('Документов не найдено');
+            }
+        });
+    </script>
+</body>
+</html>

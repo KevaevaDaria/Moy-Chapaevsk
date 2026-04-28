@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Общественность - Мой Чапаевск</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .public-chamber-info {
+            background: #a5a9be2f;
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(249, 249, 255, 0.641);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .public-chamber-info:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .public-chamber-info h4 {
+            color: #161d45;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .org-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .org-card {
+            background: rgba(255,255,255,0.5);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #161d45;
+        }
+        .org-card h5 {
+            color: #161d45;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            .org-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<button id="backToTop" class="back-to-top" title="Наверх">↑</button>
+<body>
+    <header class="header">
+        <div class="container header-flex">
+            <div class="logo-group">
+                <div class="city-emblem">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/%D0%93%D0%B5%D1%80%D0%B1_%D0%A7%D0%B0%D0%BF%D0%B0%D0%B5%D0%B2%D1%81%D0%BA%D0%B0_%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C.png" alt="Герб Чапаевска">
+                </div>
+                <div class="logo">Мой<span>Чапаевск</span></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск по городу...">
+                <button id="search-btn" class="search-btn">Найти</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-nav-panel">
+        <div class="container">
+            <nav class="sub-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="o-gorode.html">О городе</a></li>
+                    <li><a href="glava.html">Глава</a></li>
+                    <li><a href="press.html">Пресс-служба</a></li>
+                    <li><a href="admin.html">Администрация</a></li>
+                    <li><a href="document.html">Документы</a></li>
+                    <li><a href="budjet.html">Бюджет для граждан</a></li>
+                    <li><a href="proekt.html">Национальные проекты</a></li>
+                    <li class="active"><a href="obshestvenost.html">Общественность</a></li>
+                    <li><a href="programm.html">Муниципальные программы</a></li>
+                    <li><a href="investoram.html">Инвесторам</a></li>
+                    <li><a href="fgramotnost.html">Финансовая грамотность</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-layout">
+        <main class="main-content">
+            <h1>Общественность</h1>
+
+            <div class="info-block" style="margin-bottom: 30px;">
+                <p>Развитие гражданского общества и общественного контроля - одна из приоритетных задач Администрации городского округа Чапаевск. На этой странице представлена информация об общественной палате, общественных организациях и способах участия в жизни города.</p>
+            </div>
+
+            <h2 style="margin-top: 30px; margin-bottom: 20px;"> Общественная палата городского округа Чапаевск</h2>
+
+            <div class="public-chamber-info">
+                <h4>Основные сведения</h4>
+                <p><strong>Председатель:</strong> Иванов Петр Сергеевич</p>
+                <p><strong>Секретарь:</strong> Сидорова Елена Владимировна</p>
+                <p><strong>Адрес:</strong> г. Чапаевск, ул. Ленина, д. 45, офис 102</p>
+                <p><strong>Телефон:</strong> 8(84639) 2-45-67</p>
+                <p><strong>Email:</strong> palata@chapaevsk.ru</p>
+                <p><strong>Режим работы:</strong> Пн-Пт: 9:00-18:00</p>
+            </div>
+
+            <h3 class="doc-section-title"> Направления деятельности</h3>
+
+            <div class="public-chamber-info">
+                <h4>Комиссия по социальной политике и защите прав граждан</h4>
+                <p>Рассмотрение вопросов социальной защиты населения, защиты прав потребителей, развития социальных учреждений и поддержки уязвимых слоев населения.</p>
+                <div class="org-grid">
+                    <div class="org-card">
+                        <h5>Председатель</h5>
+                        <p>Петрова Ирина Ивановна</p>
+                    </div>
+                    <div class="org-card">
+                        <h5>Члены комиссии</h5>
+                        <p>12 человек</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="public-chamber-info">
+                <h4>Комиссия по экономике и развитию предпринимательства</h4>
+                <p>Содействие развитию малого и среднего бизнеса, поддержка предпринимателей, рассмотрение вопросов экономического развития города.</p>
+                <div class="org-grid">
+                    <div class="org-card">
+                        <h5>Председатель</h5>
+                        <p>Смирнов Дмитрий Алексеевич</p>
+                    </div>
+                    <div class="org-card">
+                        <h5>Члены комиссии</h5>
+                        <p>10 человек</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="public-chamber-info">
+                <h4>Комиссия по образованию, культуре и молодежной политике</h4>
+                <p>Развитие образования, культуры и спорта, поддержка молодежных инициатив, организация культурных мероприятий.</p>
+                <div class="org-grid">
+                    <div class="org-card">
+                        <h5>Председатель</h5>
+                        <p>Кузнецова Анна Викторовна</p>
+                    </div>
+                    <div class="org-card">
+                        <h5>Члены комиссии</h5>
+                        <p>15 человек</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="public-chamber-info">
+                <h4>Комиссия по благоустройству и экологии</h4>
+                <p>Контроль над состоянием окружающей среды, благоустройством общественных пространств, развитием зеленых зон города.</p>
+                <div class="org-grid">
+                    <div class="org-card">
+                        <h5>Председатель</h5>
+                        <p>Волков Сергей Сергеевич</p>
+                    </div>
+                    <div class="org-card">
+                        <h5>Члены комиссии</h5>
+                        <p>11 человек</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="public-chamber-info">
+                <h4>Комиссия по общественному контролю и взаимодействию с органами власти</h4>
+                <p>Осуществление общественного контроля, взаимодействие с администрацией, рассмотрение обращений граждан и мониторинг выполнения поручений.</p>
+                <div class="org-grid">
+                    <div class="org-card">
+                        <h5>Председатель</h5>
+                        <p>Морозова Виктория Петровна</p>
+                    </div>
+                    <div class="org-card">
+                        <h5>Члены комиссии</h5>
+                        <p>13 человек</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="doc-section-title"> Общественные слушания и форумы</h3>
+
+            <div class="public-chamber-info">
+                <h4>График проведения мероприятий</h4>
+                <p>Общественная палата регулярно проводит общественные слушания, круглые столы и форумы по актуальным вопросам развития города. Граждане могут принять участие в обсуждении и высказать свои предложения.</p>
+                <p style="margin-top: 15px;"><strong>Ближайшие мероприятия:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>15 марта</strong> - Общественные слушания по плану благоустройства на 2026 год (ДК Чапаева)</li>
+                    <li><strong>22 марта</strong> - Круглый стол "Молодежь и занятость в городе" (Администрация)</li>
+                    <li><strong>29 марта</strong> - Форум предпринимателей "Развитие бизнеса в Чапаевске" (ДК Чапаева)</li>
+                    <li><strong>5 апреля</strong> - Обсуждение проекта развития парка культуры и отдыха (ДК им.Горького)</li>
+                    <li><strong>12 апреля</strong> - Встреча с главой города по актуальным вопросам (Администрация)</li>
+                </ul>
+            </div>
+
+            <h3 class="doc-section-title"> Общественные организации города</h3>
+
+            <div class="public-chamber-info">
+                <h4>Реестр общественных организаций</h4>
+                <p>В городском округе Чапаевск действует более 50 общественных организаций, занимающихся различными направлениями деятельности. Все организации зарегистрированы в органах юстиции и имеют соответствующие лицензии.</p>
+            </div>
+
+            <h4 style="margin-top: 25px; margin-bottom: 15px;"> Социальные и благотворительные организации</h4>
+            <div class="org-grid">
+                <div class="public-chamber-info">
+                    <h5>Благотворительный фонд "Надежда"</h5>
+                    <p>Помощь малообеспеченным семьям, поддержка детей-сирот, организация благотворительных акций.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-56-78</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Организация инвалидов "Милосердие"</h5>
+                    <p>Поддержка инвалидов, организация реабилитационных программ, защита прав инвалидов.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-67-89</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Общество ветеранов войны и труда</h5>
+                    <p>Поддержка ветеранов, организация мемориальных мероприятий, защита интересов ветеранов.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-78-90</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Центр помощи семье и детям</h5>
+                    <p>Консультирование семей, помощь в воспитании детей, психологическая поддержка.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-89-01</p>
+                </div>
+            </div>
+
+            <h4 style="margin-top: 25px; margin-bottom: 15px;"> Спортивные и физкультурные организации</h4>
+            <div class="org-grid">
+                <div class="public-chamber-info">
+                    <h5>Спортивный клуб "Динамо"</h5>
+                    <p>Развитие футбола, организация чемпионатов и товарищеских матчей.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-90-12</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Федерация волейбола</h5>
+                    <p>Развитие волейбола, подготовка спортсменов, организация соревнований.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-01-23</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Клуб любителей туризма</h5>
+                    <p>Организация туристических походов, экскурсий, спортивного туризма.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-12-34</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Федерация борьбы и единоборств</h5>
+                    <p>Развитие борьбы, дзюдо, каратэ, подготовка спортсменов.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-23-45</p>
+                </div>
+            </div>
+
+            <h4 style="margin-top: 25px; margin-bottom: 15px;"> Культурные и творческие организации</h4>
+            <div class="org-grid">
+                <div class="public-chamber-info">
+                    <h5>Дом культуры "Юность"</h5>
+                    <p>Организация культурных мероприятий, работа творческих кружков и коллективов.</p>
+                    <p><strong>Адрес:</strong> ул. Советская, д. 12</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Музыкальная школа имени Глинки</h5>
+                    <p>Обучение музыке, подготовка музыкантов, организация концертов.</p>
+                    <p><strong>Адрес:</strong> ул. Пушкина, д. 25</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Театральная студия "Фантазия"</h5>
+                    <p>Развитие театрального искусства, постановка спектаклей, работа с молодежью.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-34-56</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Клуб художников и мастеров</h5>
+                    <p>Развитие изобразительного искусства, ремесел, организация выставок.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-45-67</p>
+                </div>
+            </div>
+
+            <h4 style="margin-top: 25px; margin-bottom: 15px;"> Экологические организации</h4>
+            <div class="org-grid">
+                <div class="public-chamber-info">
+                    <h5>Общество охраны природы</h5>
+                    <p>Защита окружающей среды, организация субботников, экологическое образование.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-56-78</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Клуб любителей рыбной ловли</h5>
+                    <p>Развитие спортивного рыболовства, охрана рыбных ресурсов, организация соревнований.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-67-89</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Зеленый патруль</h5>
+                    <p>Контроль за состоянием зеленых насаждений, озеленение города, уход за парками.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-78-90</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Ассоциация пчеловодов</h5>
+                    <p>Развитие пчеловодства, защита пчел, организация ярмарок и выставок.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-89-01</p>
+                </div>
+            </div>
+
+            <h4 style="margin-top: 25px; margin-bottom: 15px;"> Молодежные организации</h4>
+            <div class="org-grid">
+                <div class="public-chamber-info">
+                    <h5>Молодежный центр "Поколение"</h5>
+                    <p>Развитие молодежных инициатив, организация мероприятий, поддержка молодежи.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-90-12</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Студенческий совет</h5>
+                    <p>Защита интересов студентов, организация студенческих мероприятий.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-01-23</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Волонтерское движение "Забота"</h5>
+                    <p>Организация волонтерской деятельности, помощь нуждающимся, социальные проекты.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-12-34</p>
+                </div>
+                <div class="public-chamber-info">
+                    <h5>Скаутское движение "Орленок"</h5>
+                    <p>Воспитание молодежи, развитие лидерских качеств, организация походов и лагерей.</p>
+                    <p><strong>Контакт:</strong> 8(84639) 2-23-45</p>
+                </div>
+            </div>
+
+            <h3 class="doc-section-title" style="margin-top: 30px;"> Как принять участие</h3>
+
+            <div class="public-chamber-info">
+                <h4>Способы участия в жизни города</h4>
+                <p>Каждый гражданин может принять участие в работе Общественной палаты и общественных организаций:</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Посетить открытые заседания и мероприятия</li>
+                    <li>Подать предложение или жалобу на рассмотрение</li>
+                    <li>Принять участие в общественных слушаниях и форумах</li>
+                    <li>Вступить в состав одной из комиссий (при наличии рекомендаций)</li>
+                    <li>Создать общественную организацию</li>
+                    <li>Участвовать в волонтерской деятельности</li>
+                    <li>Предложить свою идею для развития города</li>
+                    <li>Принять участие в общественном контроле</li>
+                </ul>
+            </div>
+
+            <div class="public-chamber-info">
+                <h4>Процедура вступления</h4>
+                <p><strong>Шаг 1:</strong> Выбрать организацию или комиссию, в которую вы хотите вступить</p>
+                <p><strong>Шаг 2:</strong> Связаться с руководителем организации по телефону или электронной почте</p>
+                <p><strong>Шаг 3:</strong> Заполнить анкету и предоставить необходимые документы</p>
+                <p><strong>Шаг 4:</strong> Получить одобрение и стать членом организации</p>
+                <p style="margin-top: 15px;"><em>Требования: гражданство РФ, возраст от 18 лет, отсутствие судимости, интерес к деятельности организации.</em></p>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-widget weather-card">
+                <span class="temp">+18°C</span>
+                <p>Солнечно</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Карта города</h3>
+                <div class="map-frame-small">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=49.721415%2C52.981881&z=12" width="100%" height="200" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Важные ссылки</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">Реестр общественных организаций</a></li>
+                    <li><a href="#">График заседаний</a></li>
+                    <li><a href="#">Результаты мониторинга</a></li>
+                    <li><a href="admin.html">Контакты администрации</a></li>
+                    <li><a href="#">Положение об Общественной палате</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Обратная связь</h3>
+                <p style="font-size: 0.85rem;">Вы можете отправить свое предложение или жалобу через форму обратной связи на главной странице.</p>
+    <a href="index.html" onclick="event.preventDefault(); localStorage.setItem('scrollToForm', 'true'); window.location.href='index.html';">Отправить обращение</a>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Контакты палаты</h3>
+                <p><strong>Телефон:</strong> 8(84639) 2-45-67</p>
+                <p><strong>Email:</strong> palata@chapaevsk.ru</p>
+                <p><strong>Адрес:</strong> ул. Ленина, д. 45, офис 102</p>
+                <p><strong>Время:</strong> Пн-Пт: 9:00-18:00</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Информация о сайте</h3>
+                    <p>Сетевое издание "Официальный сайт Администрации городского округа Чапаевск"</p>
+                    <p>Регистрационный номер серии ЭЛ № ФС77-73893 от 12.10.2018</p>
+                    <p>Учредитель: Администрация городского округа Чапаевск</p>
+                    <p>Главный редактор: Краснов Александр Сергеевич</p>
+                    <p>8(84639)2-24-04</p>
+                    <p>chapaevsk@bk.ru</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Телефоны экстренных служб</h3>
+                    <ul>
+                        <li><strong>112</strong> - Единый телефон спасения</li>
+                        <li><strong>2-17-27</strong> - Пожарная охрана</li>
+                        <li><strong>2-28-55</strong> - Полиция</li>
+                        <li><strong>2-19-36</strong> - Скорая помощь</li>
+                        <li><strong>104</strong> - Газовая служба</li>
+                        <li><strong>2-34-33, 2-29-43</strong> - ЕДДС</li>
+                        <li><strong>2-34-99</strong> - Горячая линия</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><a href="#">Официальный сайт Администрации</a></li>
+                        <li><a href="#">Политика обработки персональных данных</a></li>
+                        <li><a href="#">Постановление №9541 от 10.07.2017</a></li>
+                    </ul>
+                    <p style="margin-top: 15px;">
+                        <strong>Режим работы:</strong><br>
+                        Пн-Чт: 8:00-17:00<br>
+                        Пт: 8:00-16:00<br>
+                        ЕДДС: круглосуточно
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Официальный сайт Администрации городского округа Чапаевск</p>
+                <p>При открытии страниц сайта посетитель автоматически дает согласие на обработку персональных данных</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
